@@ -6,10 +6,12 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import java.util.List;
+
 @RepositoryRestResource(excerptProjection = PersonView.class)
 public interface PersonRestRepository extends PagingAndSortingRepository<Person, Long> {
 
-    Person findByFirstnameContainingIgnoreCase(String name);
+    List<Person> findByFirstnameContainingIgnoreCase(String name);
     Person findByEmail(String username);
 
 

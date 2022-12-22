@@ -8,7 +8,7 @@ model restrepository with oaut2
 
 ## Appendix
 
-Modelo para start de aplicativos back-end em java Spring boot com auth2
+Modelo para start de aplicativos back-end em java Spring boot com auth2, DataRepository as camadas do controller e Services são criadas automaticamente
 
 
 ## Tech Stack

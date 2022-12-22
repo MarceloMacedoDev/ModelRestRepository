@@ -1,4 +1,4 @@
-# ModelRestRepositoryMONGODB
+# ModelRestRepository
 model restrepository with oaut2
 
 ## Authors

@@ -1,0 +1,19 @@
+package br.com.areadigital.areadigital.restrepository;
+
+import br.com.areadigital.areadigital.models.Person;
+import br.com.areadigital.areadigital.restrepository.view.PersonView;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
+
+@RepositoryRestResource(excerptProjection = PersonView.class)
+public interface PersonRestRepository extends PagingAndSortingRepository<Person, Long> {
+
+    Person findByFirstnameContainingIgnoreCase(String name);
+    Person findByEmail(String username);
+
+
+    @Override
+    @RestResource(exported = false)
+    void deleteById(Long aLong);
+}

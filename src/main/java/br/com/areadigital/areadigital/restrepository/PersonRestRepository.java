@@ -14,8 +14,6 @@ public interface PersonRestRepository extends PagingAndSortingRepository<Person,
     List<Person> findByFirstnameContainingIgnoreCase(String name);
     Person findByEmail(String username);
 
-
-    @Override
     @RestResource(exported = false)
-    void deleteById(Long aLong);
+    void deleteById(String aLong);
 }

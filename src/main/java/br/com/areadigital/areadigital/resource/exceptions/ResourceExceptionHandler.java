@@ -2,7 +2,6 @@ package br.com.areadigital.areadigital.resource.exceptions;
 
 import br.com.areadigital.areadigital.service.exceptions.DatabaseException;
 import br.com.areadigital.areadigital.service.exceptions.ResourceNotFoundException;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -10,11 +9,9 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.server.MethodNotAllowedException;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Instant;
-import java.util.List;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -28,7 +25,11 @@ public class ResourceExceptionHandler {
 		err.setError("Internal processing failure");
 		err.setMessage(e.getMessage());
 		err.setPath(request.getRequestURI());
-		err.addError("message", e.getCause().getMessage());
+		try{
+			err.addError("message", e.getCause().getMessage());
+		}catch (Exception exception){
+
+		}
 
 		return ResponseEntity.status(status).body(err);
 	}

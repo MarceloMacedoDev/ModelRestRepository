@@ -1,7 +1,5 @@
 package br.com.areadigital.areadigital.config;
 
-import java.util.Arrays;
-
 import br.com.areadigital.areadigital.config.components.JwtTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,10 +15,11 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+import java.util.Arrays;
+
 
 @Configuration
 @EnableAuthorizationServer
-//@EnableResourceServer
 public class ResourceServerConfigurerAdapter extends AuthorizationServerConfigurerAdapter {
 	@Value("${security.oauth2.client.client-id}")
 	private String clientId;

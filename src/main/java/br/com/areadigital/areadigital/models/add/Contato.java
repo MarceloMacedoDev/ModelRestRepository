@@ -5,15 +5,17 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Data
 @Embeddable
 @NoArgsConstructor
-public class Contato   {
+public class Contato implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Column(length = 15)
 	private String telefone;
 
-	private String CPNJCPF;
+	private String cPNJCPF;
 
 }

@@ -15,7 +15,6 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Data
 @EqualsAndHashCode
@@ -55,18 +54,18 @@ public class Person implements Serializable, UserDetails {
    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getAuthority()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
     public String getPassword() {
-        // TODO Auto-generated method stub
+        
         return this.password;
     }
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
+        
         return email;
     }
 

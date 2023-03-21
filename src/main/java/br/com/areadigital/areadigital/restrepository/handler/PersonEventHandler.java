@@ -1,8 +1,8 @@
 package br.com.areadigital.areadigital.restrepository.handler;
 
+import br.com.areadigital.areadigital.commons.Util;
 import br.com.areadigital.areadigital.models.Person;
 import br.com.areadigital.areadigital.restrepository.PersonRestRepository;
-import br.com.areadigital.areadigital.service.Util;
 import br.com.areadigital.areadigital.service.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

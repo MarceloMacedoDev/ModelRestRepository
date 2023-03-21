@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.Instant;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
